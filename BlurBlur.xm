@@ -1,8 +1,4 @@
-#include "UIBackdropView.h"
-
-@interface CreateView : NSObject
-  - (void)create;
-@end
+#include "BlurBlur.h"
 
 @implementation CreateView
   - (void)create {
