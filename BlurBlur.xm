@@ -1,20 +1,19 @@
 #include "BlurBlur.h"
 
-@implementation CreateView
-  - (void)create {
-    CGFloat *deviceWidth = [UIScreen mainScreen].bounds.size.width;
-    CGRect smallFrame = CGRectMake(0, 0, deviceWidth, 20);
+@implementation BlurBlur
+  + (UIWindow *)createWithStyle:(int)style withFrame:(CGRect)frame {
 
-    UIWindow *smallView = [[UIWindow alloc] initWithFrame:smallFrame];
-    smallView.backgroundColor = [UIColor blackColor];
-    smallView.windowLevel = UIWindowLevelAlert;
+    UIWindow *blurWindow = [[UIWindow alloc] initWithFrame:frame];
+    blurWindow.backgroundColor = [UIColor blackColor];
+    blurWindow.windowLevel = UIWindowLevelAlert;
 
-    _UIBackdropView *blurView = [[_UIBackdropView alloc] initWithStyle:2060];
+    _UIBackdropView *blurView = [[_UIBackdropView alloc] initWithStyle:style];
     [blurView setBlurRadiusSetOnce:NO];
     [blurView setBlurRadius:4.0];
     [blurView setBlurHardEdges:2];
     [blurView setBlursWithHardEdges:YES];
     [blurView setBlurQuality:@"default"];
-    [smallView addSubview:blurView];
+    [blurWindow addSubview:blurView];
+    return blurWindow;
   }
 @end
