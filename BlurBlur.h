@@ -1,3 +1,4 @@
+// UIBackdropView header
 @interface _UIBackdropView : UIView
 	- (id)initWithFrame:(CGRect)arg1 autosizesToFitSuperview:(BOOL)arg2 settings:(id)arg3;
 	- (id)initWithPrivateStyle:(int)arg1;
@@ -16,4 +17,9 @@
 
 @interface _UIBackdropViewSettings : NSObject
 	+ (id)settingsForStyle:(int)arg1;
+@end
+
+//BlurBlur header
+@interface BlurBlur : NSObject
+  - (void)create;
 @end
